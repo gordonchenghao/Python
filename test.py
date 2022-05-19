@@ -1,20 +1,22 @@
-class Student:
-    def __init__ (self, fname, lname):
-        self.fname = fname
-        self.lname = lname
-        self.age = 18
-    def __str__ (self):
-        return f'don\' print me'
+class Animal:
+    def __init__ (self, age, sex, name):
+        self.age=age
+        self.sex=sex
+        self.name=name
+    def greeting (self):
+        print("Hello, I am "+self.name)
+    def eat (self,food):
+        print("I want to eat "+food)
 
-    def fullname (self):
-        print(self.fname+" "+self.lname)
+a=Animal(2,"male","Tom")
+a.greeting()
+a.eat("can food")
 
-tom=Student("tom","h")
-ollie=Student("vcsdv","fwv")
-print(ollie)
-
-tom.fullname()
-ollie.fullname()
-Student.fullname(tom)
-Student.fullname(ollie)
-
+class Dog(Animal):
+    def __init__ (self, age, sex, name,price):
+        super().__init__(age, sex, name)
+        self.price=price
+    def bark (self):
+        print("My price is "+str(self.price))
+b=Dog(3,"female","kk",1000)
+b.bark()
